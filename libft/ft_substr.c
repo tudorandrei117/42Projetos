@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 15:32:51 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/03 16:07:32 by tburlacu         ###   ########.fr       */
+/*   Created: 2022/11/02 16:57:14 by tburlacu          #+#    #+#             */
+/*   Updated: 2022/11/03 13:29:35 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
-char	*ft_strdup(const char *str1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str2;
+	size_t	i;
+	size_t	i2;
+	char	*str;
 
-	str2 = (char *)malloc(ft_strlen(str1) + 1);
-	if (!str2)
+	i = 0;
+	i2 = 0;
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
 		return (0);
-	ft_memcpy(str2, str1, ft_strlen(str1) + 1);
-	return (str2);
+	while (s[i] != '\0')
+	{
+		if (i >= start && i2 < len)
+		{
+		str[i2] = s[i];
+				i2++;
+		}
+		i++;
+	}
+	str[i2] = '\0';
+	return (str);
 }

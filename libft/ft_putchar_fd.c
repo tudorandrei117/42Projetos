@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 15:32:51 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/03 16:07:32 by tburlacu         ###   ########.fr       */
+/*   Created: 2022/11/03 15:33:27 by tburlacu          #+#    #+#             */
+/*   Updated: 2022/11/03 15:36:44 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str1)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*str2;
-
-	str2 = (char *)malloc(ft_strlen(str1) + 1);
-	if (!str2)
-		return (0);
-	ft_memcpy(str2, str1, ft_strlen(str1) + 1);
-	return (str2);
+	write(fd, &c, 1);
+	return ;
 }
