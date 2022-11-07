@@ -6,7 +6,7 @@
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 10:18:03 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/03 16:05:45 by tburlacu         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:09:11 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif
