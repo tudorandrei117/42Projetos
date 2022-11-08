@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 10:51:35 by tburlacu          #+#    #+#              #
-#    Updated: 2022/11/07 15:09:37 by tburlacu         ###   ########.fr        #
+#    Updated: 2022/11/08 14:42:20 by tburlacu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_strdup.c \
+SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_strdup.c ft_putstr_fd.c\
 					ft_strlcat.c ft_strncmp.c ft_atoi.c ft_isalpha.c ft_strtrim.c ft_putnbr_fd.c\
 					ft_memcpy.c ft_strchr.c ft_strlcpy.c ft_substr.c ft_strjoin.c\
 					ft_strnstr.c ft_tolower.c ft_bzero.c ft_isascii.c ft_memcpy.c ft_putendl_fd.c\

@@ -6,7 +6,7 @@
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:57:14 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/03 13:29:35 by tburlacu         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:05:41 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,26 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	i2;
 	char	*str;
 
 	i = 0;
-	i2 = 0;
-	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (start > ft_strlen(s))
+	{
+			str = (char *)malloc(sizeof(char));
+			*str = '\0';
+		return (str);
+	}
+	if (ft_strlen(s) >= len)
+			str = (char *)malloc(sizeof(char) * (len + 1));
+	else
+		str = (char *)malloc(sizeof(char) * (ft_strlen(s) - start +1));
 	if (!str)
 		return (0);
-	while (s[i] != '\0')
-	{
-		if (i >= start && i2 < len)
-		{
-		str[i2] = s[i];
-				i2++;
-		}
+	while (i < len)
+	{	
+		str[i] = s[start++];
 		i++;
 	}
-	str[i2] = '\0';
+	str[i] = '\0';
 	return (str);
 }

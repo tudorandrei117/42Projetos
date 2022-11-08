@@ -6,7 +6,7 @@
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:36:01 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/07 15:05:07 by tburlacu         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:21:18 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = get_start(s1, set);
 	end = get_end(s1, set);
-	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
-	if (!str)
-		return (0);
+	if (start >= end)
+	{
+		return (ft_strdup(""));
+	}
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (str == NULL)
+		return (NULL);
 	ft_strlcpy (str, s1 + start, end - start + 1);
 	return (str);
 }

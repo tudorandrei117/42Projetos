@@ -6,63 +6,33 @@
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:34:56 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/07 15:19:40 by tburlacu         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:23:25 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_size(int n)
+char	*ft_lenret(long long n, char *str)
 {
-	int	size;
-
-	if (n > 0)
-		size = 0;
-	else
-		size = 1;
-	return (size);
-}
-
-static int	ft_trigger(int n)
-{
-	int	trigger;
-
-	if (n < 0)
-		trigger = -1;
-	else
-	trigger = 1;
-	return (trigger);
+	if (n >= 10)
+		str = ft_lenret(n / 10, str);
+	*str++ = (n % 10) + '0';
+	*str = 0;
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	num;
-	size_t	size;
+	char	str[15];
 
-	size = ft_size(n);
-	num = (size_t)n * ft_trigger(n);
-	while (n)
+	if (n < 0)
 	{
-		n /= 10;
-		size++;
+		str[0] = '-';
+		ft_lenret(((long long)n * -1), &str[1]);
 	}
-	str = (char *)malloc(size + 1);
-	if (!str)
-		return (0);
-
-		
-	*(str + size--) = '\0';
-	while (num > 0)
-	{
-		*(str + size--) = num % 10 + '0';
-		num /= 10;
-	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
-	return (str);
+	else
+		ft_lenret(n, str);
+	return (ft_substr(str, 0, (ft_strlen(str))));
 }
 
 /*  int main()

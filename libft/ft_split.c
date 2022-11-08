@@ -6,7 +6,7 @@
 /*   By: tburlacu <tburlacu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:24:01 by tburlacu          #+#    #+#             */
-/*   Updated: 2022/11/07 15:15:27 by tburlacu         ###   ########.fr       */
+/*   Updated: 2022/11/08 11:31:53 by tburlacu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
- int main()
+/*  int main()
 {
 	char str[] = "Andre	Francisco	Vitor	Lima";
 	char **temp;
 	
 	temp = ft_split(str, ' ');
 	printf("%s", temp[2]);
-} 
+}  */
